@@ -3,7 +3,6 @@ const playwright = require("playwright");
 async function main() {
   try {
     const browser = await playwright.chromium.launch({
-      channel: "chrome",
       args: ["--no-sandbox"],
     });
 
