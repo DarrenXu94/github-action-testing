@@ -8,13 +8,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install
-        # NOTE: this pins the action to a specific commit sha for security
-        # reasons but you can also use a version tag if desired. For example:
-        # ianwalter/playwright-container@v3.0.0
-        uses: ianwalter/playwright-container@43940dfa7d309fe3569b9df407ae9e84dcbf2e7f
-        with:
-          args: npm ci
-      - name: Main
-        uses: ianwalter/playwright-container@43940dfa7d309fe3569b9df407ae9e84dcbf2e7f
-        with:
-          args: npm run main
+        run: npm ci
+      - name: Install playwright browsers
+        run: npx playwright install --with-deps
+      - name: Run tests
+        run: npm run main
