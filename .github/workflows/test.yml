@@ -16,4 +16,5 @@ jobs:
           OUTPUT=$(npm run main)
           echo "OUTPUT=$OUTPUT" >> $GITHUB_ENV
       - name: log
-        run: echo "${{ env.OUTPUT }}"
+        run: |
+          echo "${{ env.OUTPUT }}"
