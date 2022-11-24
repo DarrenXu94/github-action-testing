@@ -21,4 +21,4 @@ jobs:
       #     echo "OUTPUT=$OUTPUT" >> $GITHUB_ENV
       - name: log
         run: |
-          echo ${{ env.JSON_RESPONSE }}
+          echo ${{ GITHUB_ENV }}
