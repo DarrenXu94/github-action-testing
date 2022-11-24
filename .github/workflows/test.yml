@@ -13,8 +13,9 @@ jobs:
         run: npx playwright install --with-deps
       - name: Run tests
         run: |
+          OUTPUT=$(npm run main)
           echo 'JSON_RESPONSE<<EOF' >> $GITHUB_ENV
-          npm run main >> $GITHUB_ENV
+          echo $OUTPUT >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
       #   run: |
       #     OUTPUT=$(npm run main)
